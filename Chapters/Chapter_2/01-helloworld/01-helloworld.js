@@ -2,7 +2,7 @@ const http = require("http");
 const port = 3000;
 
 const server = http.createServer((req, res) => {
-    const path = req.url.replace(/\/?(?:\?.*)?$/, '').toLowerCase() // clean url
+    const path = req.url.replace(/\/?(?:\?.*)?$/, '').toLowerCase(); // clean url
 
     switch(path){
         case "":
@@ -18,6 +18,6 @@ const server = http.createServer((req, res) => {
             res.end("Error 404: page not found");
             break;
     }
-})
+});
 
 server.listen(port, () => {console.log(`Server started on port ${port}`)});
